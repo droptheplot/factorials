@@ -1,0 +1,10 @@
+.bundle/
+*.log
+pkg/
+Gemfile.lock
+*.gem
+doc/*
+.yardoc/*
+*.bundle
+*.o
+Makefile
