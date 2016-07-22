@@ -17,4 +17,8 @@ Benchmark.bmbm(7) do |x|
   x.report('Factorial (C)') do
     int.factorial
   end
+
+  x.report('Double Factorial (C)') do
+    int.double_factorial
+  end
 end

@@ -31,6 +31,13 @@ $ gem install factorials
 # => 3628800
 ```
 
+### Double Factorial
+
+```ruby
+10.double_factorial
+# => 3840
+```
+
 ## Benchmark
 
 Conditions:
