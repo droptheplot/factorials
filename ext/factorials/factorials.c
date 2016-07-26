@@ -1,15 +1,22 @@
 #include <ruby.h>
 #include <math.h>
 
-VALUE factorials_num_factorial(VALUE num)
+static long factorial(long num)
 {
-  long value = NUM2INT(num), result = 1, i;
+  long result = 1, i;
 
-  for(i = 1; i <= value; i++) {
+  for(i = 1; i <= num; i++) {
     result = result * i;
   }
 
-  return INT2NUM(result);
+  return result;
+}
+
+VALUE factorials_num_factorial(VALUE num)
+{
+  long value = NUM2INT(num);
+
+  return INT2NUM(factorial(value));
 }
 
 VALUE factorials_num_double_factorial(VALUE num)
@@ -17,20 +24,12 @@ VALUE factorials_num_double_factorial(VALUE num)
   long value = NUM2INT(num), result = 1;
 
   if(value % 2 == 0) {
-    return INT2NUM(
-      pow(2, value / 2) * NUM2INT(
-        factorials_num_factorial(INT2NUM(value / 2))
-      )
-    );
+    result = pow(2, value / 2) * factorial(value / 2);
   } else {
-    return INT2NUM(
-      NUM2INT(factorials_num_factorial(num)) / (
-        pow(2, (value - 1) / 2) * NUM2INT(
-          factorials_num_factorial(INT2NUM((value - 1) / 2))
-        )
-      )
-    );
+    result = factorial(value) / (pow(2, (value - 1) / 2) * factorial((value - 1) / 2));
   }
+
+  return INT2NUM(result);
 }
 
 void Init_factorials(void)
