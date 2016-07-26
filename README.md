@@ -77,6 +77,10 @@ Factorial (Ruby)   4.720000   2.400000   7.120000 (  7.787638)
 Factorial (C)      0.000000   0.000000   0.000000 (  0.000131)
 ```
 
+## TODO
+
+* Support very long long long integers.
+
 ## Contributing
 
 1. Fork it (https://github.com/droptheplot/factorials/fork)
