@@ -38,6 +38,13 @@ $ gem install factorials
 # => 3840
 ```
 
+### Super Factorial
+
+```ruby
+5.superfactorial
+# => 34560
+```
+
 ## Benchmark
 
 Conditions:

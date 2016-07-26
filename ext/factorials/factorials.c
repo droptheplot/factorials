@@ -32,6 +32,17 @@ VALUE factorials_num_double_factorial(VALUE num)
   return INT2NUM(result);
 }
 
+VALUE factorials_num_superfactorial(VALUE num)
+{
+  long value = NUM2INT(num), result = 1, i;
+
+  for(i = 1; i <= value; i++) {
+    result = result * factorial(i);
+  }
+
+  return INT2NUM(result);
+}
+
 void Init_factorials(void)
 {
   rb_cNumeric = rb_define_class("Numeric", rb_cObject);
@@ -40,4 +51,5 @@ void Init_factorials(void)
 
   rb_define_method(rb_cFixnum, "factorial", factorials_num_factorial, 0);
   rb_define_method(rb_cFixnum, "double_factorial", factorials_num_double_factorial, 0);
+  rb_define_method(rb_cFixnum, "superfactorial", factorials_num_superfactorial, 0);
 }

@@ -21,4 +21,8 @@ Benchmark.bmbm(7) do |x|
   x.report('Double Factorial (C)') do
     int.double_factorial
   end
+
+  x.report('Superfactorial (C)') do
+    int.superfactorial
+  end
 end

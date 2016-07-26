@@ -27,4 +27,13 @@ describe Fixnum do
       end
     end
   end
+
+  describe '#superfactorial' do
+    let(:input) { 5 }
+    let(:output) { 34_560 }
+
+    it 'returns double factorial' do
+      expect(input.superfactorial).to eq(output)
+    end
+  end
 end
